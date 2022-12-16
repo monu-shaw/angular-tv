@@ -1,0 +1,63 @@
+<form
+  class="col-11 col-md-8 col-lg-6 mx-auto p-2 my-1"
+  (ngSubmit)="onSubmit(f)"
+  #f="ngForm"
+>
+  <div class="row gy-2">
+    <h6>Add New Channel</h6>
+    <input
+      name="name"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="name"
+    /><input
+      name="imgUrl"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="imgUrl"
+    /><input
+      name="low"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="low"
+    /><input
+      name="mid"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="mid"
+    /><input
+      name="high"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="high"
+    /><input
+      name="hd"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="hd"
+    /><input
+      name="language"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="language"
+    /><input
+      name="category"
+      class="form-control my-1 px-2 py-1 rounded-sm"
+      ngModal
+      type="text"
+      placeholder="category"
+    /><button
+      type="submit"
+      class="bg-slate-500 dark:bg-slate-900 w-1/4 mx-auto rounded-xl"
+    >
+      Add
+    </button>
+  </div>
+</form>

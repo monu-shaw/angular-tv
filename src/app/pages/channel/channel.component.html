@@ -1,0 +1,34 @@
+<div class="w-full dark:bg-black/40 dark:text-yellow-50 flex justify-center flex-col relative">
+    <a routerLink="/tv" class="text-3xl capitalize mx-auto"><i class="bi bi-house-fill"></i>{{id?.name}}</a>
+    <vg-player class="pp w-4/4 md:w-1/2 mx-auto bg-transparent md:px-2 md:rounded-2xl">
+        <video #myMedia
+               [vgHls]="play"
+               id="my-video"
+               type="video/mp4"
+               class="my-2  md:rounded-lg overflow-hidden bg-slate-900 bg-blend-overlay shadow-2xl relative transition-all ease-in-out duration-3000"
+               controls>
+        </video>
+        
+            <div id="qltCntrl" class="transition-all duration-300 grid absolute right-2 top-2 p-2 rounded-lg backdrop-blur-xl bg-white/30">
+                <div  className="grid grid-cols-3 gap-3">
+                    <div *ngFor="let q of quality">
+                        <div [ngClass]="play === q[1] ? 'backdrop-blur-sm p-1' : ''"
+                          (click)="updatePlay(q[1])">
+                          {{q[0]}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </vg-player>
+
+    <div class="flex overflow-auto snap-x">
+        <div *ngFor="let d of channel">
+            <div class="c-card rounded-lg overflow-hidden capitalize border-2 transition-all duration-700 pb-1 snap-center">
+                <div class="w-full img-con mb-2">
+                    <img src="/assets/images.png" alt="" srcset="" class="" width="100%" height="80">
+                </div>
+                <a [routerLink]="['/channel',d.id]" (click)="updateChannel(d?.id)" class="text-lg md:text-xl">{{d.name}}→</a>
+            </div>
+        </div>
+    </div>
+</div>
