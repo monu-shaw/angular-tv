@@ -1,1 +1,49 @@
-<p>footer works!</p>
+<div class="row mx-0 d-flex  justify-content-around py-3">
+    <div class="col-12 col-md-6 col-lg-4 mx-auto text-center">
+        OurTv (Angular)
+        <br>
+        <div class="col-10 col-md-8 col-lg-6 mx-auto">
+            <img width="100%" style="width: 100%;aspect-ratio: 1.8;" src="https://github-readme-streak-stats.herokuapp.com?user=monu-shaw&amp;theme=darcula&amp;hide_border=true&amp;background=FFFFFF00">
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-4 ps-md-4">
+        <h2>About Me</h2>
+        <div class="flex-column d-flex ps-3">
+            <a href="https://monu-shaw.github.io/portfolio/" target="_blank">Monu kr. Shaw</a>
+            <a href="https://monu-shaw.github.io/portfolio/" target="_blank">Full-stack Developer</a>
+            <a href="https://monu-shaw.github.io/portfolio/" target="_blank">MERN & MEAN Stack</a>
+        </div>
+    </div>
+    <div class="col-6 col-md-3 col-lg-4">
+        <h2>Other Project</h2>
+        <div class="flex-column d-flex ps-3">
+            <a href="https://ourtv.vercel.app/" target="_blank">OuTv (NextJS)</a>
+        </div>
+        <h2>Links</h2>
+        <div class="flex-column d-flex ps-3">
+            <a [href]="('/tv')" target="_blank">Live Tv</a>
+        </div>
+        <div class="">
+            <ul class="navbar-nav text-capitalize d-md-none d-sm-none d-lg-block">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/home" routerLinkActive="active">{{user?user:'home'}}</a>
+                </li>
+                <li *ngIf="!user" class="nav-item">
+                  <a class="nav-link" routerLink="/signin" routerLinkActive="active">SignIn</a>
+                </li>
+                <li *ngIf="!user" class="nav-item">
+                  <a class="nav-link" routerLink="/signup" routerLinkActive="active">SignUp</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/tv" routerLinkActive="active">Tv</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/store" routerLinkActive="active">Store</a>
+                </li>
+                <li *ngIf="user" class="nav-item">
+                  <a class="nav-link btn btn-outline-primary" (click)="supabase.logOut()">Logout</a>
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>

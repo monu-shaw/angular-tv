@@ -1,5 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,23 +10,24 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+ 
   constructor(
     private supabase:AuthService,
     private toastr: ToastrService
-  ){
-
-  }
+  ){}
   ngOnInit(): void {
     
   }
-  signUp(email:string,password:string){
-   /*  this.supabase.signUp(email,password).then(res=>{
+  signUp(e:NgForm){
+    const {email,password} = e.value
+    
+     this.supabase.register(email,password).then(res=>{
       console.log(res.data);
       if (res.error==null) {
         this.toastr.success('Registerd Successfully');
       }else{
-        this.toastr.warning('Something Not Right');
+        this.toastr.warning(res.msg);
       }
-    }); */
+    }); 
   }
 }

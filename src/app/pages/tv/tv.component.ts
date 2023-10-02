@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { TvserviceService } from 'src/app/services/tvservice.service';
 
 @Component({
@@ -6,8 +7,10 @@ import { TvserviceService } from 'src/app/services/tvservice.service';
   templateUrl: './tv.component.html',
   styleUrls: ['./tv.component.css']
 })
+
 export class TvComponent implements OnInit{
-  channels
+  loading=true
+  searchTerm:string
   data = []
   constructor(
     private supabase:TvserviceService
@@ -16,15 +19,17 @@ export class TvComponent implements OnInit{
     supabase.readAll().then((res)=>{
       supabase.setData(res.data);
       this.data = res.data;
+      this.loading=false;
     })
-    console.log('nono');
     
   }
   }
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
+  onSearch(e:NgModel):void{
+    this.data = this.supabase.data.filter((i:any)=>i.name.includes(e))
+    
+  }
 
 
 

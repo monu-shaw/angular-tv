@@ -4,9 +4,9 @@
 @tailwind utilities;
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     body{
         background-color: rgb(44, 44, 44);
         color: antiquewhite;
     }
-  }
+  } */

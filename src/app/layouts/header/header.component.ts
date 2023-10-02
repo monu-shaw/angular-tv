@@ -17,9 +17,7 @@ export class HeaderComponent implements OnInit{
     private router: Router,
     private toastr: ToastrService
   ){
-     
-     
-     
+    this.user=supabase.user
   }
   ngOnInit(): void {
     

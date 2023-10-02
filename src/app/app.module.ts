@@ -28,6 +28,11 @@ import {VgControlsModule} from '@videogular/ngx-videogular/controls';
 import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import {VgStreamingModule} from '@videogular/ngx-videogular/streaming';
+import { HomeComponentEComm } from './ecommerce/home/home.component';
+import { CheckoutComponent } from './ecommerce/checkout/checkout.component';
+import { CategoryComponent } from './ecommerce/category/category.component';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from './services/redux/slice/cart/slice';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +44,10 @@ import {VgStreamingModule} from '@videogular/ngx-videogular/streaming';
     AddnoteComponent,
     AddchannelComponent,
     TvComponent,
-    ChannelComponent
+    ChannelComponent,
+    HomeComponentEComm,
+    CheckoutComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,8 @@ import {VgStreamingModule} from '@videogular/ngx-videogular/streaming';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    VgStreamingModule
+    VgStreamingModule,
+    StoreModule.forRoot({'cart':cartReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

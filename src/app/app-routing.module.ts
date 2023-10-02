@@ -9,6 +9,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { TvComponent } from './pages/tv/tv.component';
 import { authGuard } from './services/auth.guard';
 import { secureGuard } from './services/guards/secure.guard';
+import { HomeComponentEComm } from './ecommerce/home/home.component';
 
 const routes: Routes = [
   
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path:'addchannel', component:AddchannelComponent}
   ]
   },
+  {path:'store', component:HomeComponentEComm},
   { path: '', redirectTo:'/tv', pathMatch:'full'}
   //{ path: '**', component: PageNotFoundComponent }
 ];
